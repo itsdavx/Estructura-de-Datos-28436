@@ -17,11 +17,11 @@ class Paciente{
 	D getDiagnostico() const;
 	H getHistoria() const;
 
-	friend ostream& operator<<(ostream& os, const Paciente& p){
+	friend std::ostream& operator<<(std::ostream& os, const Paciente& p){
                 os<< " Nombre " << p.nombre
-                  << " Edad " << p.edad
-                  << " Diagnostico" << p.diagnostico
-                  << " Historia" << p.historia;
+                  << ", Edad " << p.edad
+                  << ", Diagnostico" << p.diagnostico
+                  << ", Historia" << p.historia;
                 return os;
         }
 	bool operator<(const Paciente& otro) const;

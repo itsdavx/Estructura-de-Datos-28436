@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-#include <Paciente.h>
+#include "Pacientes.h"
 using namespace std;
 
 class ListaDoble{
@@ -20,6 +20,12 @@ class ListaDoble{
 		void insertarFinal(const Paciente<string, int, string, int>& p);
 		void imprimir() const;
 		int cantidad() const;
+		Paciente<string, int, string, int>* buscarNombre(const string& nom);
+		Paciente<string, int, string, int>* buscarHistoria(int h);
+		bool eliminar(int historia);
+		double promedioEdad() const;
+		int contarDiagnostico(const string& diag) const;
+		Paciente<string, int, string, int>* pacienteMasJoven() const;
 };
 #include "ListaDoble.cpp"
 
