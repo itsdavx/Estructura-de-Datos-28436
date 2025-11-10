@@ -29,7 +29,7 @@ public:
     void mostrar() const {
         cout << "Nombre: " << nombre
              << "\nEdad: " << edad
-             << "\nDiagnóstico: " << diagnostico
+             << "\nDiagnostico: " << diagnostico
              << "\nPrioridad: " << prioridad << endl;
     }
 };
@@ -65,13 +65,13 @@ public:
         nuevo->paciente = new Paciente(p);
         nuevo->siguiente = tope;
         tope = nuevo;
-        cout << "\n Atención registrada para el paciente: " << p.nombre << endl;
+        cout << "\n Atencion registrada para el paciente: " << p.nombre << endl;
     }
 
     // Deshacer la última atención
     void deshacerAtencion() {
         if (estaVacio()) {
-            cout << "\nNo hay atenciones para deshacer.\n";
+            cout << "\nSin atenciones para deshacer.\n";
             return;
         }
 
@@ -107,13 +107,13 @@ void menuHistorial() {
 
     do {
         cout << "\n==============================\n"
-             << "  🏥 MÓDULO DE HISTORIAL MÉDICO\n"
+             << "MODULO DE HISTORIAL MEDICO\n"
              << "==============================\n"
-             << "1. Registrar atención\n"
-             << "2. Deshacer última atención\n"
+             << "1. Registrar atencion\n"
+             << "2. Deshacer última atencion\n"
              << "3. Mostrar historial completo\n"
-             << "0. Volver al menú principal\n"
-             << "Seleccione una opción: ";
+             << "0. Volver al menu principal\n"
+             << "Seleccione una opcion: ";
         cin >> opcion;
         cin.ignore();
 
@@ -140,10 +140,10 @@ void menuHistorial() {
             historial.mostrarHistorial();
         }
         else if (opcion == 0) {
-            cout << "\n Volviendo al menú principal...\n";
+            cout << "\n Regresando al menú principal...\n";
         }
         else {
-            cout << "\n Opción inválida, intente nuevamente.\n";
+            cout << "\n Opcion invalida, intente de nuevo.\n";
         }
 
     } while (opcion != 0);
@@ -153,33 +153,33 @@ int main() {
     int opcion;
 
     do {
-        cout << "\n====================================\n";
-        cout << "   🏥 SISTEMA DE GESTIÓN HOSPITALARIA\n";
-        cout << "====================================\n";
-        cout << "1. Módulo de Pacientes (Lista Dinámica)\n";
-        cout << "2. Módulo de Citas (Cola)\n";
-        cout << "3. Módulo de Historial (Pila)\n";
-        cout << "0. Salir\n";
-        cout << "Seleccione una opción: ";
+        cout << "\n====================================\n"
+            << "SISTEMA DE GESTIÓN DE HOSPITAL\n"
+            << "====================================\n"
+            << "1. Modulo de Pacientes (Lista Dinámica)\n"
+            << "2. Modulo de Citas (Cola)\n"
+            << "3. Módulo de Historial (Pila)\n"
+            << "0. Salir\n"
+            << "Seleccione una opcion: ";
         cin >> opcion;
 
         switch (opcion) {
             case 1:
-                cout << "\n Llamar función: menuPacientes();\n";
+                cout << "\n Llamar funcion: menuPacientes();\n";
                 // menu pacientes (Por implementar)
                 break;
             case 2:
-                cout << "\n Llamar función: menuCitas();\n";
+                cout << "\n Llamar funcion: menuCitas();\n";
                 // menu citas (Por implementar)
                 break;
             case 3:
                 menuHistorial(); 
                 break;
             case 0:
-                cout << "\n👋 Saliendo del sistema...\n";
+                cout << "\nSaliendo del sistema...\n";
                 break;
             default:
-                cout << "\n❌ Opción inválida, intente nuevamente.\n";
+                cout << "\nOpcion invalida, intente de nuevo.\n";
         }
 
     } while (opcion != 0);
