@@ -25,7 +25,7 @@ Componentes que debe incluir el sistema:
             - Contar cuántos pacientes enen el mismo diagnós co. 
       5. Sobrecarga de Operadores: 
             - Comparar pacientes según su edad o nivel de prioridad médica. 
-      6. Ges ón de Memoria: 
+      6. Gestión de Memoria: 
             - Utilizar new y delete para crear y liberar memoria dinámica. 
       7. Menú Principal: 
             - Presentar un menú simple con todas las opciones del sistema.
