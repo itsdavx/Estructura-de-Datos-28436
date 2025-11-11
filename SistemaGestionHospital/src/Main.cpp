@@ -25,7 +25,7 @@ int main() {
     inicializarCola(colaCitas);
     inicializarPila(pilaHistorial);
 
-    // Crear carpeta "data" si no existe
+    // Crear carpeta data si no existe
     #ifdef _WIN32
         _mkdir("data");
     #else
@@ -33,9 +33,8 @@ int main() {
     #endif
 
 
-    // Cargar pacientes desde CSV al iniciar
+    // Cargar persistencia al iniciar
     cargarPacientesCSV(listaPacientes, "data/pacientes.csv");
-    // Cargar citas e historial
     cargarCitasCSV(colaCitas, "data/citas.csv");
     cargarHistorialCSV(pilaHistorial, "data/historial.csv");
 
@@ -53,7 +52,7 @@ int main() {
             opcion = -1;
             continue;
         }
-        
+
         cin.ignore();
 
         switch (opcion) {
@@ -246,7 +245,7 @@ int main() {
 
     } while (opcion != 0);
 
-    // Guardar lista final al salir (por seguridad)
+    // Guardar lista final al salir (por seguridad de los datos)
     guardarPacientesCSV(listaPacientes, "data/pacientes.csv");
     guardarCitasCSV(colaCitas, "data/citas.csv");
     guardarHistorialCSV(pilaHistorial, "data/historial.csv");
