@@ -4,6 +4,7 @@
 #include "../include/Utilidades.h"
 #include "../include/Menu.h"
 #include "../include/Persistencia.h"
+
 #include <iostream>
 
 #include <sys/stat.h>
@@ -44,7 +45,15 @@ int main() {
 
     do {
         mostrarMenu();
-        cin >> opcion; 
+
+        if (!(cin >> opcion)) {
+            cin.clear();
+            cin.ignore(10000, '\n');
+            cout << "\nEntrada invalida. Por favor ingrese un numero.\n";
+            opcion = -1;
+            continue;
+        }
+        
         cin.ignore();
 
         switch (opcion) {
