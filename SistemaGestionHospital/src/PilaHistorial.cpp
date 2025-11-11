@@ -30,7 +30,7 @@ void mostrarHistorial(const Pila &p) {
         cout << "\nNo hay atenciones en el historial.\n";
         return;
     }
-    cout << "\n---------------------------- HISTORIAL DE ATENCIONES ----------------------------n";
+    cout << "\n---------------------------- HISTORIAL DE ATENCIONES ----------------------------\n";
     NodoPila *temp = p.tope;
     int pos = 1;
     while (temp) {

@@ -12,3 +12,14 @@ int contarDiagnosticoRecursivo(NodoLista *nodo, string diagnostico) {
     int count = (nodo->dato.diagnostico == diagnostico) ? 1 : 0;
     return count + contarDiagnosticoRecursivo(nodo->siguiente, diagnostico);
 }
+
+int obtenerMaxHistoria(NodoLista* cabeza) {
+    int maxHistoria = 1000;
+    NodoLista* temp = cabeza;
+    while (temp) {
+        if (temp->dato.numHistoria > maxHistoria)
+            maxHistoria = temp->dato.numHistoria;
+        temp = temp->siguiente;
+    }
+    return maxHistoria;
+}

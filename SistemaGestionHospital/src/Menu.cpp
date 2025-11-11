@@ -22,5 +22,4 @@ void mostrarMenu()
     cout << "13. Comparar dos pacientes\n";
     cout << "0.  Salir\n";
     cout << "\nSeleccione una opcion: ";
-    cout << "--------------------------------------------------------\n";
 }

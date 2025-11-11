@@ -33,5 +33,6 @@ int buscarEnArreglo(T arr[], int n, T valor)
 //Funciones recursivas
 double calcularPromedioEdadRecursivo(NodoPila *nodo, int suma, int cont);
 int contarDiagnosticoRecursivo(NodoLista *nodo, string diagnostico);
+int obtenerMaxHistoria(NodoLista* cabeza);
 
 #endif

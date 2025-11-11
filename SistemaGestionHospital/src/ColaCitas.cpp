@@ -38,7 +38,7 @@ void mostrarCitas(const Cola &c) {
         cout << "\nNo hay citas pendientes.\n";
         return;
     }
-    cout << "\n---------------------------- CITAS PENDIENTES ----------------------------n";
+    cout << "\n---------------------------- CITAS PENDIENTES ----------------------------\n";
     NodoCola *temp = c.front;
     int pos = 1;
     while (temp) {
