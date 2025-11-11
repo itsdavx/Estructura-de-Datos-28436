@@ -3,13 +3,15 @@
 
 #include "Paciente.h"
 
-struct NodoPila {
+struct NodoPila
+{
     Paciente dato;
-    NodoPila* siguiente;
+    NodoPila *siguiente;
 };
 
-struct Pila {
-    NodoPila* tope;
+struct Pila
+{
+    NodoPila *tope;
 };
 
 void inicializarPila(Pila &p);

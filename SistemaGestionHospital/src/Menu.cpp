@@ -2,7 +2,8 @@
 #include <iostream>
 using namespace std;
 
-void mostrarMenu() {
+void mostrarMenu()
+{
     cout << "\n================================================\n";
     cout << "  SISTEMA DE GESTION DE PACIENTES - HOSPITAL   \n";
     cout << "================================================\n";

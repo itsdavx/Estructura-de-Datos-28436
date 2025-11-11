@@ -2,3 +2,7 @@ La forma de compitar el programa es:
     1. Abrir la terminal en la carpeta SistemaGestionHospital
     2. ESCRIBIR: g++ -std=c++17 src/*.cpp -Iinclude -o SistemaGestionHospital
     3. Listo, proyecto compilado.
+
+Repositorio de github:
+
+    https://github.com/itsdavx/Proyecto3-Estructura-de-Datos-28436.git

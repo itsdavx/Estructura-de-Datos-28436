@@ -3,16 +3,17 @@
 
 #include "Paciente.h"
 
-struct NodoLista {
+struct NodoLista
+{
     Paciente dato;
-    NodoLista* siguiente;
+    NodoLista *siguiente;
 };
 
-void inicializarLista(NodoLista* &cabeza);
-void insertarPaciente(NodoLista* &cabeza, string nombre, int edad, string diagnostico, int numHistoria, int prioridad);
-NodoLista* buscarPorHistoria(NodoLista* cabeza, int numHistoria);
-NodoLista* buscarPorNombre(NodoLista* cabeza, string nombre);
-bool eliminarPaciente(NodoLista* &cabeza, int numHistoria);
-void mostrarPacientes(NodoLista* cabeza);
+void inicializarLista(NodoLista *&cabeza);
+void insertarPaciente(NodoLista *&cabeza, string nombre, int edad, string diagnostico, int numHistoria, int prioridad);
+NodoLista *buscarPorHistoria(NodoLista *cabeza, int numHistoria);
+NodoLista *buscarPorNombre(NodoLista *cabeza, string nombre);
+bool eliminarPaciente(NodoLista *&cabeza, int numHistoria);
+void mostrarPacientes(NodoLista *cabeza);
 
 #endif

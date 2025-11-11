@@ -5,7 +5,8 @@
 #include <string>
 using namespace std;
 
-struct Paciente {
+struct Paciente
+{
     string nombre;
     int edad;
     string diagnostico;
@@ -17,6 +18,6 @@ struct Paciente {
 bool operator<(const Paciente &p1, const Paciente &p2);
 bool operator>(const Paciente &p1, const Paciente &p2);
 bool operator==(const Paciente &p1, const Paciente &p2);
-ostream& operator<<(ostream &os, const Paciente &p);
+ostream &operator<<(ostream &os, const Paciente &p);
 
 #endif

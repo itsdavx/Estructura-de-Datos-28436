@@ -3,14 +3,16 @@
 
 #include "Paciente.h"
 
-struct NodoCola {
+struct NodoCola
+{
     Paciente dato;
-    NodoCola* siguiente;
+    NodoCola *siguiente;
 };
 
-struct Cola {
-    NodoCola* front;
-    NodoCola* rear;
+struct Cola
+{
+    NodoCola *front;
+    NodoCola *rear;
 };
 
 void inicializarCola(Cola &c);
