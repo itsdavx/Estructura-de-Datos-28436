@@ -227,6 +227,44 @@ void mostrarHistorial(const Pila &p) {
     }
 }
 
+// ==================== TEMPLATES ====================
+
+// Template para encontrar el máximo entre dos valores
+template <typename T>
+T maximo(T a, T b) {
+    return (a > b) ? a : b;
+}
+
+// Template para encontrar el mínimo entre dos valores
+template <typename T>
+T minimo(T a, T b) {
+    return (a < b) ? a : b;
+}
+
+// Template para intercambiar dos valores
+template <typename T>
+void intercambiar(T &a, T &b) {
+    T temp = a;
+    a = b;
+    b = temp;
+}
+
+// Template para contar elementos en una lista genérica
+template <typename NodoTipo>
+int contarNodos(NodoTipo* cabeza) {
+    if (cabeza == nullptr) return 0;
+    return 1 + contarNodos(cabeza->siguiente);
+}
+
+// Template para buscar un valor en un arreglo
+template <typename T>
+int buscarEnArreglo(T arr[], int tamanio, T valor) {
+    for (int i = 0; i < tamanio; i++) {
+        if (arr[i] == valor) return i;
+    }
+    return -1;
+}
+
 // ==================== FUNCIONES RECURSIVAS ====================
 double calcularPromedioEdadRecursivo(NodoPila* nodo, int suma, int cont) {
     if (nodo == nullptr) {
