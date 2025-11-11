@@ -4,9 +4,9 @@ using namespace std;
 
 void mostrarMenu()
 {
-    cout << "\n================================================\n";
-    cout << "  SISTEMA DE GESTION DE PACIENTES - HOSPITAL   \n";
-    cout << "================================================\n";
+    cout << "\n--------------------------------------------------------\n";
+    cout << "     SISTEMA DE GESTION DE PACIENTES - HOSPITAL   \n";
+    cout << "--------------------------------------------------------\n";
     cout << "\n1.  Registrar nuevo paciente\n";
     cout << "2.  Buscar paciente por historia clinica\n";
     cout << "3.  Buscar paciente por nombre\n";
@@ -22,4 +22,5 @@ void mostrarMenu()
     cout << "13. Comparar dos pacientes\n";
     cout << "0.  Salir\n";
     cout << "\nSeleccione una opcion: ";
+    cout << "--------------------------------------------------------\n";
 }

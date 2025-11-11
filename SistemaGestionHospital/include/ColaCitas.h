@@ -3,18 +3,17 @@
 
 #include "Paciente.h"
 
-struct NodoCola
-{
+struct NodoCola {
     Paciente dato;
     NodoCola *siguiente;
 };
 
-struct Cola
-{
+struct Cola{
     NodoCola *front;
     NodoCola *rear;
 };
 
+//Funciones de Cola
 void inicializarCola(Cola &c);
 bool colaVacia(const Cola &c);
 void encolarCita(Cola &c, Paciente paciente);

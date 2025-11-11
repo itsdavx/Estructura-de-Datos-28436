@@ -5,8 +5,7 @@
 #include <string>
 using namespace std;
 
-struct Paciente
-{
+struct Paciente {
     string nombre;
     int edad;
     string diagnostico;

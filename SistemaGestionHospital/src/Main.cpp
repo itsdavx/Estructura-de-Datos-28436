@@ -15,19 +15,18 @@ int main()
     inicializarPila(pilaHistorial);
 
     int opcion, contadorHistorias = 1000;
-    do
-    {
+    do {
         mostrarMenu();
         cin >> opcion;
         cin.ignore();
 
-        switch (opcion)
-        {
+        switch (opcion) {
         case 1:
-        { // registrar paciente
+        {
             string nombre, diagnostico;
             int edad, prioridad;
-            cout << "\n--- REGISTRAR PACIENTE ---\n";
+            
+            cout << "\n--------- REGISTRAR PACIENTE ---------\n";
             cout << "Nombre: ";
             getline(cin, nombre);
             cout << "Edad: ";
@@ -39,7 +38,7 @@ int main()
             cin >> prioridad;
             contadorHistorias++;
             insertarPaciente(listaPacientes, nombre, edad, diagnostico, contadorHistorias, prioridad);
-            cout << "\nPaciente registrado exitosamente. Historia Clinica: " << contadorHistorias << endl;
+            cout << "\nPaciente registrado exitosamente. \nHistoria Clinica: " << contadorHistorias << endl;
             break;
         }
         case 2:

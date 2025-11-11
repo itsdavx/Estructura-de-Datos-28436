@@ -4,6 +4,7 @@
 #include "ListaPacientes.h"
 #include "PilaHistorial.h"
 
+//Uso de Templates
 template <typename T>
 T maximo(T a, T b) { return (a > b) ? a : b; }
 template <typename T>
@@ -29,6 +30,7 @@ int buscarEnArreglo(T arr[], int n, T valor)
     return -1;
 }
 
+//Funciones recursivas
 double calcularPromedioEdadRecursivo(NodoPila *nodo, int suma, int cont);
 int contarDiagnosticoRecursivo(NodoLista *nodo, string diagnostico);
 

@@ -3,12 +3,12 @@
 
 #include "Paciente.h"
 
-struct NodoLista
-{
+struct NodoLista {
     Paciente dato;
     NodoLista *siguiente;
 };
 
+//Funciones de Lista
 void inicializarLista(NodoLista *&cabeza);
 void insertarPaciente(NodoLista *&cabeza, string nombre, int edad, string diagnostico, int numHistoria, int prioridad);
 NodoLista *buscarPorHistoria(NodoLista *cabeza, int numHistoria);

@@ -2,17 +2,20 @@
 #include <iostream>
 using namespace std;
 
-void inicializarPila(Pila &p) { p.tope = nullptr; }
-bool pilaVacia(const Pila &p) { return p.tope == nullptr; }
+void inicializarPila(Pila &p) { 
+    p.tope = nullptr; 
+}
 
-void apilar(Pila &p, Paciente paciente)
-{
+bool pilaVacia(const Pila &p) { 
+    return p.tope == nullptr; 
+}
+
+void apilar(Pila &p, Paciente paciente) {
     NodoPila *nuevo = new NodoPila{paciente, p.tope};
     p.tope = nuevo;
 }
 
-bool desapilar(Pila &p, Paciente &paciente)
-{
+bool desapilar(Pila &p, Paciente &paciente) {
     if (pilaVacia(p))
         return false;
     NodoPila *temp = p.tope;
@@ -22,20 +25,16 @@ bool desapilar(Pila &p, Paciente &paciente)
     return true;
 }
 
-void mostrarHistorial(const Pila &p)
-{
-    if (pilaVacia(p))
-    {
+void mostrarHistorial(const Pila &p) {
+    if (pilaVacia(p)) {
         cout << "\nNo hay atenciones en el historial.\n";
         return;
     }
-    cout << "\n========== HISTORIAL DE ATENCIONES ==========\n";
+    cout << "\n---------------------------- HISTORIAL DE ATENCIONES ----------------------------n";
     NodoPila *temp = p.tope;
     int pos = 1;
-    while (temp)
-    {
-        cout << pos++ << ". " << temp->dato.nombre << " - " << temp->dato.diagnostico
-             << " (Historia: " << temp->dato.numHistoria << ")\n";
+    while (temp) {
+        cout << pos++ << ". " << temp->dato.nombre << " - " << temp->dato.diagnostico << " (Historia: " << temp->dato.numHistoria << ")\n";
         temp = temp->siguiente;
     }
 }
