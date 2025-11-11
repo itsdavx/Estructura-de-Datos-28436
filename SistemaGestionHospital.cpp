@@ -121,17 +121,7 @@ void mostrarPacientes(NodoLista* cabeza) {
     cout << "\n========== LISTA DE PACIENTES ==========\n";
     NodoLista* temp = cabeza;
     while (temp != nullptr) {
-        cout << "Historia: " << temp->dato.numHistoria << " | ";
-        cout << "Nombre: " << temp->dato.nombre << " | ";
-        cout << "Edad: " << temp->dato.edad << " | ";
-        cout << "Diagnostico: " << temp->dato.diagnostico << " | ";
-        cout << "Prioridad: ";
-        
-        if (temp->dato.prioridad == 1) cout << "ALTA";
-        else if (temp->dato.prioridad == 2) cout << "MEDIA";
-        else cout << "BAJA";
-        cout << endl;
-        
+        cout << temp->dato << endl;  // Usa sobrecarga de <<
         temp = temp->siguiente;
     }
 }
@@ -253,16 +243,33 @@ int contarDiagnosticoRecursivo(NodoLista* nodo, string diagnostico) {
 }
 
 // ==================== SOBRECARGA DE OPERADORES ====================
-bool compararEdadMenor(const Paciente &p1, const Paciente &p2) {
+
+// Sobrecarga del operador < (compara por edad)
+bool operator<(const Paciente &p1, const Paciente &p2) {
     return p1.edad < p2.edad;
 }
 
-bool compararEdadMayor(const Paciente &p1, const Paciente &p2) {
+// Sobrecarga del operador > (compara por edad)
+bool operator>(const Paciente &p1, const Paciente &p2) {
     return p1.edad > p2.edad;
 }
 
-bool compararPrioridad(const Paciente &p1, const Paciente &p2) {
+// Sobrecarga del operador == (compara por prioridad)
+bool operator==(const Paciente &p1, const Paciente &p2) {
     return p1.prioridad == p2.prioridad;
+}
+
+// Sobrecarga del operador << para imprimir paciente
+ostream& operator<<(ostream &os, const Paciente &p) {
+    os << "Historia: " << p.numHistoria << " | ";
+    os << "Nombre: " << p.nombre << " | ";
+    os << "Edad: " << p.edad << " | ";
+    os << "Diagnostico: " << p.diagnostico << " | ";
+    os << "Prioridad: ";
+    if (p.prioridad == 1) os << "ALTA";
+    else if (p.prioridad == 2) os << "MEDIA";
+    else os << "BAJA";
+    return os;
 }
 
 // ==================== FUNCIÓN MENÚ ====================
@@ -336,10 +343,7 @@ int main() {
                 NodoLista* p = buscarPorHistoria(listaPacientes, numHistoria);
                 if (p != nullptr) {
                     cout << "\n--- PACIENTE ENCONTRADO ---\n";
-                    cout << "Nombre: " << p->dato.nombre << endl;
-                    cout << "Edad: " << p->dato.edad << endl;
-                    cout << "Diagnostico: " << p->dato.diagnostico << endl;
-                    cout << "Historia: " << p->dato.numHistoria << endl;
+                    cout << p->dato << endl;  // Usa sobrecarga de <<
                 } else {
                     cout << "\nPaciente no encontrado.\n";
                 }
@@ -354,10 +358,7 @@ int main() {
                 NodoLista* p = buscarPorNombre(listaPacientes, nombre);
                 if (p != nullptr) {
                     cout << "\n--- PACIENTE ENCONTRADO ---\n";
-                    cout << "Nombre: " << p->dato.nombre << endl;
-                    cout << "Edad: " << p->dato.edad << endl;
-                    cout << "Diagnostico: " << p->dato.diagnostico << endl;
-                    cout << "Historia: " << p->dato.numHistoria << endl;
+                    cout << p->dato << endl;  // Usa sobrecarga de <<
                 } else {
                     cout << "\nPaciente no encontrado.\n";
                 }
@@ -463,15 +464,17 @@ int main() {
                 
                 if (p1 != nullptr && p2 != nullptr) {
                     cout << "\n--- COMPARACION ---\n";
-                    if (compararEdadMenor(p1->dato, p2->dato)) {
+                    
+                    // Usa sobrecarga de operadores <, >, ==
+                    if (p1->dato < p2->dato) {
                         cout << p1->dato.nombre << " es mas joven que " << p2->dato.nombre << endl;
-                    } else if (compararEdadMayor(p1->dato, p2->dato)) {
+                    } else if (p1->dato > p2->dato) {
                         cout << p1->dato.nombre << " es mayor que " << p2->dato.nombre << endl;
                     } else {
                         cout << "Ambos tienen la misma edad\n";
                     }
                     
-                    if (compararPrioridad(p1->dato, p2->dato)) {
+                    if (p1->dato == p2->dato) {
                         cout << "Ambos tienen la misma prioridad medica\n";
                     } else {
                         cout << "Tienen diferente prioridad medica\n";
